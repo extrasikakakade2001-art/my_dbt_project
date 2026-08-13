@@ -1,0 +1,65 @@
+version: 2
+
+models:
+
+  - name: emp_clean_assign
+    description: "Contains cleaned employee records after applying business rules."
+
+    columns:
+
+      - name: EMPLOYEE_ID
+        description: "Unique employee identifier"
+        tests:
+          - unique
+          - not_null
+
+      - name: EMPLOYEE_NAME
+        description: "Employee full name"
+
+      - name: DEPARTMENT
+        description: "Business department"
+
+      - name: SALARY
+        description: "Monthly salary"
+
+
+
+
+
+  - name: emp_report_assign
+    description: "Final reporting model consumed by Power BI dashboards."
+
+    columns:
+
+      - name: EMP_ID
+        description: "Unique employee identifier"
+
+      - name: EMP_NAME
+        description: "Employee full name"
+
+      - name: DEPARTMENT
+        description: "Business department"
+
+      - name: SALARY
+        description: "Monthly salary"
+
+
+
+
+
+
+
+
+  - name: department_report_assign
+    description: "Department-level employee reporting model."
+
+    columns:
+
+      - name: DEPARTMENT
+        description: "Business department"
+
+      - name: TOTAL_EMPLOYEES
+        description: "Total number of employees in the department"
+
+      - name: AVG_SALARY
+        description: "Average employee salary by department"

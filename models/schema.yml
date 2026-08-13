@@ -1,0 +1,31 @@
+version: 2
+
+models:
+  - name: display
+
+    columns:
+
+      - name: EMP_ID
+        tests:
+          - unique
+          - not_null
+
+      - name: EMP_NAME
+        tests:
+          - not_null
+
+      - name: SALARY
+        tests:
+          - not_null
+          - salary_greater_than_zero
+          - salary_minimum:
+              minimum_salary: 20000
+
+      - name: DEPARTMENT
+        tests:
+          - accepted_values:
+              values:
+                - IT
+                - HR
+                - FINANCE
+                - SALES
